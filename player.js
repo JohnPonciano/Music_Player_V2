@@ -29,14 +29,17 @@ playBtn.addEventListener('click', ()=>{
 //if you have other API server, you edit need edit music.src and dik.style.backdroundImage
 const setMusic = (i) =>{
     seekBar.value = 0;
-    let misc = songs[i];
-    let song = misc[0]
+   // let misc = songs[i];
+   // let song = misc[0]
+    song = songs[i]
     currentMusic = i;
-    music.src = `http://localhost:1337${song.path}`;
+    music.src = song.path
+    //music.src = `http://localhost:1337${song.path}`;
 
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist;
-    disk.style.backgroundImage = `url(http://localhost:1337${song.cover})`;
+    disk.style.backgroundImage = `url(${song.cover})`;
+    //disk.style.backgroundImage = `url(http://localhost:1337${song.cover})`;
 
     currentTime.innerHTML = '00:00'
     setTimeout(()=>{
